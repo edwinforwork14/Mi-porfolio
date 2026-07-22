@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+  },
+
+  // Transpile Three.js modules for server-side rendering compatibility
+  transpilePackages: ["three"],
 };
 
 export default nextConfig;
