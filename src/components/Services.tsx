@@ -9,18 +9,18 @@ gsap.registerPlugin(ScrollTrigger);
 const servicesData = [
   {
     id: "01",
-    title: "3D MODELING",
-    description: "Creation of detailed objects, characters, or environments tailored to specific client needs. Ideal for games, products, and visualizations.",
+    title: "WEB DEVELOPMENT",
+    description: "Full-stack web applications built with Next.js, React, and Node.js. From responsive landing pages to complex internal tools with authentication, databases, and REST APIs.",
   },
   {
     id: "02",
     title: "BRANDING & DESIGN",
-    description: "Developing unique visual identities, including logos, color palettes, and typography that represent your brand's essence.",
+    description: "Clean, modern visual identities and UI/UX design that communicate your brand's essence. Logos, color systems, typography, and complete design systems.",
   },
   {
     id: "03",
-    title: "WEB DEVELOPMENT",
-    description: "Building responsive, high-performance websites using the latest technologies to ensure a seamless user experience.",
+    title: "AI-ASSISTED DEV",
+    description: "AI-driven development services: prompt engineering, agent automation, and intelligent tooling integration to accelerate delivery and improve code quality.",
   },
 ];
 

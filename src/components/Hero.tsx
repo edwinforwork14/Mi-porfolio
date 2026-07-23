@@ -67,7 +67,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-[13vw] leading-none font-[1000] text-[#D1D1D1] tracking-tighter select-none z-0"
         >
-          HI, I'M ALEX
+          HI, I'M EDWIN
         </motion.h1>
 
         {/* IMAGEN DEL PERSONAJE (Capa superior al texto - sigue el mouse) */}
@@ -87,7 +87,7 @@ export default function Hero() {
           >
             <Image
               src="/models/yo.png"
-              alt="Alex"
+              alt="Edwin"
               fill
               className="object-contain object-bottom"
               priority
@@ -105,7 +105,7 @@ export default function Hero() {
           className="absolute left-16 top-[55%] -translate-y-1/2 z-20 max-w-[240px]"
         >
           <p className="text-[12px] font-black leading-[1.6] tracking-widest uppercase">
-            A 3D DESIGNER PASSIONATE ABOUT CRAFTING BOLD AND MEMORABLE PROJECTS 🙃
+            FULL STACK DEVELOPER & AI ENGINEER — CRAFTING MODERN WEB APPS WITH CODE AND CREATIVITY
           </p>
         </motion.div>
 

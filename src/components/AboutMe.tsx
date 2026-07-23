@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const textContent = `With over five years of experience in design, I specialize in branding, web design, and user experience. I love collaborating with businesses that want to stand out and showcase their best side. Let's create something amazing together!`;
+const textContent = `Full Stack Developer with proven experience building modern web applications from frontend interfaces to backend APIs and databases. Passionate about leveraging AI tools to accelerate development, write cleaner code, and ship faster. I turn complex problems into scalable, user-friendly solutions.`;
 
 export default function AboutMe() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -95,7 +95,7 @@ export default function AboutMe() {
             WebkitTextStroke: "1px white",
           }}
         >
-          ABOUT ME
+          ABOUT
         </h2>
 
         <div
@@ -113,17 +113,6 @@ export default function AboutMe() {
           ))}
         </div>
 
-        <div className="mt-12">
-          <button className="group relative">
-            <div className="relative px-12 py-5 rounded-full bg-purple-950/40 backdrop-blur-xl border border-purple-500/30 shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:rotate-2 group-hover:border-purple-400/60 group-hover:shadow-[0_0_30px_-5px_rgba(168,85,247,0.5),0_0_60px_-10px_rgba(168,85,247,0.3),inset_0_0_30px_-10px_rgba(168,85,247,0.15)] active:scale-95 overflow-hidden">
-              {/* Brillo animado en hover */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
-              <span className="relative text-[11px] font-[1000] uppercase tracking-[0.2em] text-white flex items-center gap-2">
-                Contact Me <span className="text-[8px]">→</span>
-              </span>
-            </div>
-          </button>
-        </div>
       </div>
     </section>
   );

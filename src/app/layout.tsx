@@ -16,10 +16,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex — 3D Designer Portfolio",
+  title: "Alex — Full Stack Developer & 3D Designer Portfolio",
   description:
-    "A bold 3D Designer passionate about crafting memorable digital experiences.",
-  keywords: ["3D designer", "portfolio", "creative", "developer"],
+    "Full Stack Developer specializing in Next.js, React, Node.js, and AI-assisted development. Building modern web apps with clean design and scalable architecture.",
+  keywords: [
+    "full stack developer",
+    "next.js developer",
+    "react developer",
+    "web development",
+    "portfolio",
+    "ai-assisted development",
+    "3d designer",
+    "venezuela developer",
+  ],
+  openGraph: {
+    title: "Alex — Full Stack Developer & Portfolio",
+    description: "Modern web apps built with Next.js, React, and AI-assisted development.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
