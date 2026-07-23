@@ -109,23 +109,21 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* Botón a la derecha (A la altura de los ojos/mejilla) */}
+        {/* Texto a la derecha — más info */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}
-          className="absolute right-16 top-[48%] -translate-y-1/2 z-20"
+          className="absolute right-16 top-[48%] -translate-y-1/2 z-20 max-w-[200px] text-right"
         >
-          <button className="group relative">
-            {/* Botón morado blur con brillo */}
-            <div className="relative px-12 py-5 rounded-full bg-purple-950/40 backdrop-blur-xl border border-purple-500/30 shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:rotate-2 group-hover:border-purple-400/60 group-hover:shadow-[0_0_30px_-5px_rgba(168,85,247,0.5),0_0_60px_-10px_rgba(168,85,247,0.3),inset_0_0_30px_-10px_rgba(168,85,247,0.15)] active:scale-95 overflow-hidden">
-              {/* Brillo animado en hover */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
-              <span className="relative text-[11px] font-[1000] uppercase tracking-[0.2em] text-white flex items-center gap-2">
-                Contact Me <span className="text-[8px]">→</span>
-              </span>
-            </div>
-          </button>
+          <p className="text-[11px] font-black leading-[1.8] tracking-widest uppercase text-purple-400/70">
+            Next.js · React · Node.js · TypeScript · Tailwind · PostgreSQL · Supabase · Python
+          </p>
+          <div className="mt-4 flex justify-end gap-3">
+            <a href="mailto:edwinforwork14@gmail.com" className="text-[10px] font-black tracking-[0.3em] uppercase text-white/40 hover:text-white transition-colors border border-white/10 rounded-full px-4 py-1.5">
+              edwinforwork14@gmail.com
+            </a>
+          </div>
         </motion.div>
 
       </div>

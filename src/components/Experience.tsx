@@ -11,7 +11,6 @@ const experience = [
   {
     company: "Untitled Tech Company (UTC)",
     role: "Full Stack Developer",
-    period: "Current",
     impact: "Key contributor across multiple real client projects — from architecture to deployment.",
     highlights: [
       "Built full-stack web apps using Next.js, React, and Node.js",
@@ -58,10 +57,11 @@ export default function Experience() {
         },
       });
 
-      // 1. Title stroke → solid
+      // 1. Title: purple stroke → solid purple with glow
       tl.to(titleRef.current, {
-        color: "white",
-        webkitTextStroke: "0px white",
+        color: "#a855f7",
+        webkitTextStroke: "0px #a855f7",
+        textShadow: "0 0 30px rgba(168,85,247,0.6), 0 0 60px rgba(168,85,247,0.3)",
       }, 0);
 
       // 2. Icons slide in from sides + spin
@@ -90,13 +90,31 @@ export default function Experience() {
         );
       }
 
-      // 4. Impact content — reveal (va DESPUÉS de UTC card, ANTES de skills)
-      const impactContent = impactRef.current?.querySelectorAll(".impact-item");
-      if (impactContent) {
-        tl.fromTo(impactContent,
+      // 4. Impact — cada hijo anima independientemente
+      const impactHeading = impactRef.current?.querySelectorAll(".impact-heading");
+      if (impactHeading) {
+        tl.fromTo(impactHeading,
           { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, stagger: 0.2, duration: 0.6 },
+          { opacity: 1, y: 0, duration: 0.6 },
           1.0
+        );
+      }
+
+      const impactText = impactRef.current?.querySelectorAll(".impact-text");
+      if (impactText) {
+        tl.fromTo(impactText,
+          { opacity: 0, y: 25 },
+          { opacity: 1, y: 0, duration: 0.8 },
+          1.6
+        );
+      }
+
+      const impactBtn = impactRef.current?.querySelectorAll(".impact-btn");
+      if (impactBtn) {
+        tl.fromTo(impactBtn,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5 },
+          2.2
         );
       }
 
@@ -144,13 +162,14 @@ export default function Experience() {
 
       {/* CONTENIDO */}
       <div className="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center">
-        {/* TITLE */}
+        {/* TITLE — morado con brillo como About Me */}
         <h2
           ref={titleRef}
           className="text-[12vw] md:text-[9vw] font-[900] tracking-tighter mb-12 leading-none select-none"
           style={{
-            color: "black",
-            WebkitTextStroke: "1px white",
+            color: "transparent",
+            WebkitTextStroke: "1px #a855f7",
+            textShadow: "0 0 0px transparent",
           }}
         >
           EXPERIENCE
@@ -160,17 +179,12 @@ export default function Experience() {
         <div ref={contentRef} className="w-full max-w-3xl">
           {experience.map((exp, i) => (
             <div key={i} className="exp-item">
-              {/* Header */}
-              <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-black text-white">{exp.company}</h3>
-                  <p className="text-sm md:text-base font-bold text-purple-400/80 tracking-widest uppercase mt-1">
-                    {exp.role}
-                  </p>
-                </div>
-                <span className="text-xs font-bold text-gray-500 tracking-[0.2em] uppercase">
-                  {exp.period}
-                </span>
+              {/* Header centrado */}
+              <div className="text-center mb-6">
+                <h3 className="text-2xl md:text-3xl font-black text-white">{exp.company}</h3>
+                <p className="text-sm md:text-base font-bold text-purple-400/80 tracking-widest uppercase mt-1">
+                  {exp.role}
+                </p>
               </div>
 
               {/* Impact statement */}
@@ -193,20 +207,23 @@ export default function Experience() {
 
         {/* IMPACT SECTION — entre UTC y Tech Stack, sin contenedor */}
         <div ref={impactRef} className="w-full max-w-3xl mt-12 impact-item">
-            <h4 className="text-sm font-black text-purple-400/80 tracking-widest uppercase mb-4">
-              Key Impact at UTC
+            <h4 className="impact-heading text-sm font-black text-purple-400/80 tracking-widest uppercase text-center mb-4">
+              Untitled Tech Company (UTC) — Full Stack Developer
             </h4>
-            <p className="text-sm md:text-[15px] text-gray-300 font-medium leading-relaxed mb-6">
+            <p className="impact-text text-sm md:text-[15px] text-gray-300 font-medium leading-relaxed mb-6 text-center">
               Directly improved the company&apos;s core web presence by redesigning the corporate website, optimizing performance, and implementing modern UI/UX patterns. Contributed across <span className="text-white font-bold">multiple real client projects</span> — from initial architecture through final deployment — helping UTC deliver high-quality digital products faster with AI-assisted workflows.
             </p>
-            <a
-              href="https://untitledtechcompany.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-2.5 border border-white/20 rounded-full text-[11px] font-black uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all"
-            >
-              Visit Site <span className="text-[9px]">→</span>
-            </a>
+            <div className="impact-btn flex justify-center">
+              <a
+                href="https://untitledtechcompany.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center gap-2 px-8 py-3 rounded-full bg-purple-950/40 backdrop-blur-xl border border-purple-500/30 text-[11px] font-black uppercase tracking-widest text-white shadow-xl transition-all duration-500 hover:scale-105 hover:border-purple-400/60 hover:shadow-[0_0_30px_-5px_rgba(168,85,247,0.5),inset_0_0_30px_-10px_rgba(168,85,247,0.15)] overflow-hidden"
+              >
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+                <span className="relative">Visit Site <span className="text-[9px]">→</span></span>
+              </a>
+            </div>
         </div>
 
         {/* SKILLS SECTION */}
