@@ -108,7 +108,7 @@ export default function InfiniteScrollSection() {
     <section
       id="customers"
       ref={containerRef}
-      className="relative w-full bg-black py-32 overflow-hidden"
+      className="relative w-full bg-black py-16 sm:py-20 md:py-32 overflow-hidden"
     >
       <div className="relative flex flex-col gap-4 -rotate-[6deg] scale-110 origin-center">
 
@@ -144,7 +144,7 @@ export default function InfiniteScrollSection() {
               >
                 <Image
                   src={img}
-                  alt={`web preview ${i}`}
+                  alt={`Website design preview ${i + 1} — projects built by Edwin Zuleta, Full Stack Developer`}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="220px"
@@ -166,7 +166,7 @@ export default function InfiniteScrollSection() {
               >
                 <Image
                   src={img}
-                  alt={`web preview ${i}`}
+                  alt={`Website design preview ${i + 1} — projects built by Edwin Zuleta, Full Stack Developer`}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="220px"

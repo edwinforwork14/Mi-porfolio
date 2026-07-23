@@ -135,28 +135,28 @@ export default function Experience() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen w-full bg-black overflow-hidden flex flex-col items-center justify-center font-sans py-24 px-4 md:px-8"
+      className="relative min-h-screen w-full bg-black overflow-hidden flex flex-col items-center justify-center font-sans py-16 sm:py-20 md:py-24 px-16 sm:px-4 md:px-8"
     >
-      {/* ICONOS */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        <div ref={iconTL} className="absolute top-[10%] left-[5%] w-40 h-40 md:w-56 md:h-56">
-          <Image src="/images/trebol.png" alt="icon" fill className="object-contain" />
+      {/* ICONOS (decorativos) */}
+      <div className="absolute inset-0 z-10 pointer-events-none" aria-hidden="true">
+        <div ref={iconTL} className="absolute top-[8%] sm:top-[10%] left-[3%] sm:left-[5%] w-20 h-20 sm:w-40 sm:h-40 md:w-56 md:h-56">
+          <Image src="/images/trebol.png" alt="" fill className="object-contain" />
         </div>
-        <div ref={iconTR} className="absolute top-[5%] right-[5%] w-40 h-40 md:w-56 md:h-56">
-          <Image src="/images/manos.png" alt="icon" fill className="object-contain" />
+        <div ref={iconTR} className="absolute top-[4%] sm:top-[5%] right-[3%] sm:right-[5%] w-20 h-20 sm:w-40 sm:h-40 md:w-56 md:h-56">
+          <Image src="/images/manos.png" alt="" fill className="object-contain" />
         </div>
-        <div ref={iconBL} className="absolute bottom-[15%] left-[8%] w-32 h-32 md:w-44 md:h-44">
-          <Image src="/images/escrito.png" alt="icon" fill className="object-contain" />
+        <div ref={iconBL} className="absolute bottom-[12%] sm:bottom-[15%] left-[4%] sm:left-[8%] w-16 h-16 sm:w-32 sm:h-32 md:w-44 md:h-44">
+          <Image src="/images/escrito.png" alt="" fill className="object-contain" />
         </div>
-        <div ref={iconBR} className="absolute bottom-[20%] right-[8%] w-32 h-32 md:w-48 md:h-48">
-          <Image src="/images/billete.png" alt="icon" fill className="object-contain" />
+        <div ref={iconBR} className="absolute bottom-[15%] sm:bottom-[20%] right-[4%] sm:right-[8%] w-16 h-16 sm:w-32 sm:h-32 md:w-48 md:h-48">
+          <Image src="/images/billete.png" alt="" fill className="object-contain" />
         </div>
         {/* Lupa y ajedrez — mismo estilo que los iconos de esquina */}
-        <div ref={lupaRef} className="absolute top-[38%] left-[5%] w-32 h-32 md:w-44 md:h-44">
-          <Image src="/images/lupa-Photoroom.png" alt="lupa" fill className="object-contain" />
+        <div ref={lupaRef} className="absolute top-[35%] sm:top-[38%] left-[3%] sm:left-[5%] w-16 h-16 sm:w-32 sm:h-32 md:w-44 md:h-44">
+          <Image src="/images/lupa-Photoroom.png" alt="" fill className="object-contain" />
         </div>
-        <div ref={ajedrezRef} className="absolute top-[38%] right-[5%] w-32 h-32 md:w-44 md:h-44">
-          <Image src="/images/ajedres-Photoroom.png" alt="ajedrez" fill className="object-contain" />
+        <div ref={ajedrezRef} className="absolute top-[35%] sm:top-[38%] right-[3%] sm:right-[5%] w-16 h-16 sm:w-32 sm:h-32 md:w-44 md:h-44">
+          <Image src="/images/ajedres-Photoroom.png" alt="" fill className="object-contain" />
         </div>
       </div>
 
@@ -165,7 +165,7 @@ export default function Experience() {
         {/* TITLE — morado con brillo como About Me */}
         <h2
           ref={titleRef}
-          className="text-[12vw] md:text-[9vw] font-[900] tracking-tighter mb-12 leading-none select-none"
+          className="text-[14vw] sm:text-[12vw] md:text-[9vw] font-[900] tracking-tighter mb-8 sm:mb-12 leading-none select-none"
           style={{
             color: "transparent",
             WebkitTextStroke: "1px #a855f7",
@@ -180,22 +180,22 @@ export default function Experience() {
           {experience.map((exp, i) => (
             <div key={i} className="exp-item">
               {/* Header centrado */}
-              <div className="text-center mb-6">
-                <h3 className="text-2xl md:text-3xl font-black text-white">{exp.company}</h3>
-                <p className="text-sm md:text-base font-bold text-purple-400/80 tracking-widest uppercase mt-1">
+              <div className="text-center mb-4 sm:mb-6">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white">{exp.company}</h3>
+                <p className="text-sm sm:text-sm md:text-base font-bold text-purple-400/80 tracking-widest uppercase mt-1">
                   {exp.role}
                 </p>
               </div>
 
               {/* Impact statement */}
-              <p className="text-sm md:text-base text-gray-400 font-medium mb-6 border-l-2 border-purple-500/50 pl-4 italic">
+              <p className="text-sm sm:text-sm md:text-base text-gray-400 font-medium mb-4 sm:mb-6 border-l-2 border-purple-500/50 pl-3 sm:pl-4 italic">
                 {exp.impact}
               </p>
 
               {/* Bullet points */}
               <ul className="space-y-2.5">
                 {exp.highlights.map((point, j) => (
-                  <li key={j} className="flex items-start gap-3 text-sm md:text-[15px] text-gray-300 font-medium">
+                  <li key={j} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-sm md:text-[15px] text-gray-300 font-medium">
                     <span className="mt-0.5 w-1.5 h-1.5 rounded-full bg-purple-500/60 flex-shrink-0" />
                     {point}
                   </li>
@@ -206,11 +206,11 @@ export default function Experience() {
         </div>
 
         {/* IMPACT SECTION — entre UTC y Tech Stack, sin contenedor */}
-        <div ref={impactRef} className="w-full max-w-3xl mt-12 impact-item">
-            <h4 className="impact-heading text-sm font-black text-purple-400/80 tracking-widest uppercase text-center mb-4">
+        <div ref={impactRef} className="w-full max-w-3xl mt-8 sm:mt-12 impact-item">
+            <h4 className="impact-heading text-sm sm:text-sm font-black text-purple-400/80 tracking-widest uppercase text-center mb-3 sm:mb-4">
               Untitled Tech Company (UTC) — Full Stack Developer
             </h4>
-            <p className="impact-text text-sm md:text-[15px] text-gray-300 font-medium leading-relaxed mb-6 text-center">
+            <p className="impact-text text-sm sm:text-sm md:text-[15px] text-gray-300 font-medium leading-relaxed mb-4 sm:mb-6 text-center">
               Directly improved the company&apos;s core web presence by redesigning the corporate website, optimizing performance, and implementing modern UI/UX patterns. Contributed across <span className="text-white font-bold">multiple real client projects</span> — from initial architecture through final deployment — helping UTC deliver high-quality digital products faster with AI-assisted workflows.
             </p>
             <div className="impact-btn flex justify-center">
@@ -218,7 +218,7 @@ export default function Experience() {
                 href="https://untitledtechcompany.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-2 px-8 py-3 rounded-full bg-purple-950/40 backdrop-blur-xl border border-purple-500/30 text-[11px] font-black uppercase tracking-widest text-white shadow-xl transition-all duration-500 hover:scale-105 hover:border-purple-400/60 hover:shadow-[0_0_30px_-5px_rgba(168,85,247,0.5),inset_0_0_30px_-10px_rgba(168,85,247,0.15)] overflow-hidden"
+                className="group relative inline-flex items-center gap-2 px-5 sm:px-8 py-2 sm:py-3 rounded-full bg-purple-950/40 backdrop-blur-xl border border-purple-500/30 text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-white shadow-xl transition-all duration-500 hover:scale-105 hover:border-purple-400/60 overflow-hidden"
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
                 <span className="relative">Visit Site <span className="text-[9px]">→</span></span>
@@ -228,10 +228,10 @@ export default function Experience() {
 
         {/* SKILLS SECTION */}
         <div ref={skillsRef} className="w-full max-w-3xl mt-8">
-          <h3 className="text-lg font-black text-white/50 tracking-widest uppercase text-center mb-8 select-none">
+          <h3 className="text-base sm:text-lg font-black text-white/50 tracking-widest uppercase text-center mb-6 sm:mb-8 select-none">
             Tech Stack
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-3 gap-x-4 gap-y-4 sm:grid-cols-3 lg:grid-cols-5 sm:gap-4">
             {skills.map((group) => (
               <div key={group.category} className="flex flex-col gap-2">
                 <span className="text-[10px] font-black text-purple-400/60 tracking-[0.2em] uppercase">
@@ -253,7 +253,7 @@ export default function Experience() {
         </div>
 
         {/* LANGUAGES */}
-        <div className="mt-12 flex gap-8 text-sm">
+        <div className="mt-8 sm:mt-12 flex gap-6 sm:gap-8 text-sm sm:text-sm">
           <div className="flex items-center gap-2">
             <span className="text-[10px] font-black text-white/40 tracking-[0.2em] uppercase">Languages</span>
             <span className="font-bold text-white/80">Español</span>

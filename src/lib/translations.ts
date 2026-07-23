@@ -10,7 +10,8 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.cv": "CV",
 
     // Hero
-    "hero.greeting": "HI, I'M EDWIN",
+    "hero.greeting": "HI, I'M ",
+    "hero.name": "EDWIN",
     "hero.subtitle":
       "FULL STACK DEVELOPER & AI ENGINEER — CRAFTING MODERN WEB APPS WITH CODE AND CREATIVITY",
     "hero.techstack":
@@ -103,7 +104,8 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.cv": "CV",
 
     // Hero
-    "hero.greeting": "HOLA, SOY EDWIN",
+    "hero.greeting": "HOLA, SOY ",
+    "hero.name": "EDWIN",
     "hero.subtitle":
       "DESARROLLADOR FULL STACK & INGENIERO DE IA — CREANDO APPS WEB MODERNAS CON CÓDIGO Y CREATIVIDAD",
     "hero.techstack":

@@ -6,6 +6,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, ChevronLeft, ChevronRight, Code } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/translations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -265,9 +267,9 @@ function ProjectOverlay({
             </div>
 
             {/* Title */}
-            <h3 className="text-xl md:text-2xl font-black text-purple-400 mb-3 leading-tight">
+            <h2 className="text-xl md:text-2xl font-black text-purple-400 mb-3 leading-tight">
               {project.title}
-            </h3>
+            </h2>
 
             {/* Full Description - truncated to avoid scroll */}
             <p className="text-sm text-white/60 leading-relaxed mb-4 line-clamp-4 lg:line-clamp-5">
@@ -334,6 +336,9 @@ function ProjectOverlay({
 
 // ─── Main Component ──────────────────────────────────────────────────────────
 export default function ProjectsStack() {
+  const { lang } = useLanguage();
+  const t = translations[lang];
+
   const containerRef = useRef<HTMLDivElement>(null);
   const sheetRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -434,9 +439,8 @@ export default function ProjectsStack() {
           </div>
         </div>
 
-        {/* STICKY CARDS */}
-        <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center bg-black">
-          <div className="relative w-full max-w-5xl mx-auto px-4 md:px-0 h-full flex items-center justify-center">
+        {/* STICKY CARDS */}          <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center bg-black px-2 sm:px-4">
+          <div className="relative w-full max-w-5xl mx-auto h-full flex items-center justify-center">
             {projects.map((project, index) => (
               <div
                 key={project.id}
@@ -446,24 +450,24 @@ export default function ProjectsStack() {
                 className="absolute w-full flex items-center justify-center"
                 style={{ zIndex: index + 10 }}
               >
-                <div className="bg-[#050505] border border-white/10 rounded-[30px] md:rounded-[45px] p-6 md:p-10 shadow-2xl w-full">
+                <div className="bg-[#050505] border border-white/10 rounded-[20px] sm:rounded-[30px] md:rounded-[45px] p-5 sm:p-6 md:p-10 shadow-2xl w-full">
                   {/* Header Card */}
-                  <div className="flex items-start justify-between mb-6 md:mb-8">
-                    <div className="flex gap-4 md:gap-8 items-start">
-                      <span className="text-5xl md:text-8xl font-black text-purple-400 leading-none">
+                  <div className="flex flex-col sm:flex-row items-start justify-between mb-4 sm:mb-6 md:mb-8 gap-3 sm:gap-0">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 md:gap-8 items-start">
+                      <span className="text-4xl sm:text-5xl md:text-8xl font-black text-purple-400 leading-none">
                         {project.id}
                       </span>
-                      <div className="flex flex-col pt-1">
-                        <span className="text-[10px] font-bold text-gray-500 tracking-[0.4em] uppercase mb-1">
+                      <div className="flex flex-col pt-0 sm:pt-1">
+                        <span className="text-[11px] sm:text-[10px] font-bold text-gray-500 tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-0.5 sm:mb-1">
                           CLIENT
                         </span>
-                        <span className="text-sm text-purple-400 font-bold mt-0">
+                        <span className="text-sm sm:text-sm text-purple-400 font-bold">
                           {project.title}
                         </span>
-                        <span className="text-xl md:text-3xl font-bold text-white">
+                        <span className="text-lg sm:text-xl md:text-3xl font-bold text-white">
                           {project.client}
                         </span>
-                        <span className="text-xs text-white/25 mt-0.5 max-w-md leading-relaxed">
+                        <span className="text-sm sm:text-xs text-white/25 mt-0.5 max-w-md leading-relaxed">
                           {project.description}
                         </span>
                       </div>
@@ -471,7 +475,7 @@ export default function ProjectsStack() {
                   </div>
 
                   {/* Grid Images */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 h-[260px] md:h-[380px] mb-6 md:mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-4 md:gap-6 h-[180px] sm:h-[260px] md:h-[380px] mb-4 sm:mb-6 md:mb-8">
                     <div className="md:col-span-2 relative rounded-[25px] md:rounded-[35px] overflow-hidden border border-white/5 group/image">
                       <Image
                         src={project.images[0]}
@@ -502,24 +506,25 @@ export default function ProjectsStack() {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 sm:gap-3">
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative z-[110] inline-flex items-center gap-2 px-5 md:px-7 py-2.5 rounded-full bg-white text-black text-[10px] font-black uppercase tracking-widest hover:bg-white/90 transition-all duration-300 group"
+                        className="relative z-[110] inline-flex items-center gap-2 sm:gap-2 px-4 sm:px-5 md:px-7 py-2.5 sm:py-2.5 rounded-full bg-white text-black text-[11px] sm:text-[10px] font-black uppercase tracking-widest hover:bg-white/90 transition-all duration-300 group"
                       >
-                        <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                        Live Project
+                        <ExternalLink className="w-3.5 sm:w-3.5 h-3.5 sm:h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        <span className="hidden sm:inline">{t["projects.live"]}</span>
+                        <span className="sm:hidden">Live</span>
                       </a>
                     )}
                     <button
                       onClick={() => setOverlayProject(project)}
-                      className="relative z-[110] inline-flex items-center gap-2 px-5 md:px-7 py-2.5 rounded-full border border-white/20 text-white/80 text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 group"
+                      className="relative z-[110] inline-flex items-center gap-2 sm:gap-2 px-4 sm:px-5 md:px-7 py-2.5 sm:py-2.5 rounded-full border border-white/20 text-white/80 text-[11px] sm:text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 group"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-purple-400 group-hover:bg-black transition-colors duration-300" />
-                      Más Info
+                      {t["projects.more"]}
                     </button>
                   </div>
                 </div>

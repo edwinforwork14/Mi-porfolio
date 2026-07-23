@@ -88,14 +88,14 @@ export default function Services() {
       {/* LA HOJA BLANCA */}
       <div
         ref={sheetRef}
-        className="relative w-full bg-[#f3f3f3] text-black min-h-screen px-6 py-20 md:px-16"
+        className="relative w-full bg-[#f3f3f3] text-black min-h-screen px-4 sm:px-6 md:px-16 py-12 sm:py-16 md:py-20"
       >
         <div className="max-w-6xl mx-auto">
           
           {/* TÍTULO SERVICES */}
           <h2
             ref={titleRef}
-            className="text-[12vw] md:text-[8vw] font-[1000] tracking-tighter text-center mb-24 select-none leading-none"
+            className="text-[14vw] sm:text-[12vw] md:text-[8vw] font-[1000] tracking-tighter text-center mb-12 sm:mb-16 md:mb-24 select-none leading-none"
           >
             SERVICES
           </h2>
@@ -105,19 +105,19 @@ export default function Services() {
             {servicesData.map((service, index) => (
               <div 
                 key={index} 
-                className="service-item border-t border-black/10 py-12 flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16 group"
+                className="service-item border-t border-black/10 py-8 sm:py-10 md:py-12 flex flex-col md:flex-row items-start md:items-center gap-4 sm:gap-6 md:gap-16 group"
               >
                 {/* NUMERACIÓN (01) */}
-                <span className="text-6xl md:text-8xl font-black tracking-tighter leading-none opacity-90">
+                <span className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-none opacity-90">
                   {service.id}
                 </span>
 
                 {/* TEXTO: Título y Descripción */}
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-lg md:text-xl font-black tracking-widest uppercase">
+                  <h3 className="text-base sm:text-lg md:text-xl font-black tracking-widest uppercase">
                     {service.title}
                   </h3>
-                  <p className="max-w-xl text-sm md:text-base text-gray-500 font-medium leading-relaxed">
+                  <p className="max-w-xl text-xs sm:text-sm md:text-base text-gray-500 font-medium leading-relaxed">
                     {service.description}
                   </p>
                 </div>

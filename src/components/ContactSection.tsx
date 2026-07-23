@@ -65,22 +65,22 @@ export default function ContactSection() {
   return (
     <section id="contact" className="relative w-full bg-white">
       {/* CONTENIDO BLANCO: Formulario con texto negro */}
-      <div className="bg-white relative px-6 md:px-20 py-24">
+      <div className="bg-white relative px-4 sm:px-6 md:px-20 py-16 sm:py-20 md:py-24">
         {/* DECORACIONES */}
-        <div className="absolute -left-10 bottom-20 w-36 h-36 md:w-56 md:h-56 blur-[1px] opacity-70 pointer-events-none">
+        <div className="absolute -left-8 sm:-left-10 bottom-16 sm:bottom-20 w-24 h-24 sm:w-36 sm:h-36 md:w-56 md:h-56 blur-[1px] opacity-70 pointer-events-none">
           <Image src="/images/plateado.png" alt="silver" fill className="object-contain" />
         </div>
-        <div className="absolute top-10 right-10 md:right-20 w-28 h-28 md:w-44 md:h-44 opacity-70 pointer-events-none rotate-12">
+        <div className="absolute top-6 sm:top-10 right-6 sm:right-10 md:right-20 w-20 h-20 sm:w-28 sm:h-28 md:w-44 md:h-44 opacity-70 pointer-events-none rotate-12">
           <Image src="/images/azul.png" alt="blue" fill className="object-contain" />
         </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 md:gap-16">
           <div className="flex flex-col justify-center">
-            <h2 className="text-6xl md:text-8xl font-black text-black leading-[0.9] tracking-tighter mb-8">
+            <h2 className="text-5xl sm:text-6xl md:text-8xl font-black text-black leading-[0.9] tracking-tighter mb-6 sm:mb-8">
               LET&apos;S <br /> <span className="text-purple-600">GET</span> IN <br /> TOUCH
             </h2>
             <a
               href="mailto:edwinforwork14@gmail.com"
-              className="text-xl md:text-2xl font-bold text-purple-600 border-b-2 border-purple-600/30 w-fit hover:opacity-70 transition-opacity"
+              className="text-base sm:text-xl md:text-2xl font-bold text-purple-600 border-b-2 border-purple-600/30 w-fit hover:opacity-70 transition-opacity"
             >
               edwinforwork14@gmail.com
             </a>
