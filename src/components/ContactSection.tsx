@@ -63,7 +63,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="relative w-full bg-white">
+    <section id="contact" className="relative w-full bg-white">
       {/* CONTENIDO BLANCO: Formulario con texto negro */}
       <div className="bg-white relative px-6 md:px-20 py-24">
         {/* DECORACIONES */}
@@ -76,11 +76,11 @@ export default function ContactSection() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="flex flex-col justify-center">
             <h2 className="text-6xl md:text-8xl font-black text-black leading-[0.9] tracking-tighter mb-8">
-              LET&apos;S <br /> GET IN <br /> TOUCH
+              LET&apos;S <br /> <span className="text-purple-600">GET</span> IN <br /> TOUCH
             </h2>
             <a
               href="mailto:edwinforwork14@gmail.com"
-              className="text-xl md:text-2xl font-bold text-black border-b-2 border-black/30 w-fit hover:opacity-70 transition-opacity"
+              className="text-xl md:text-2xl font-bold text-purple-600 border-b-2 border-purple-600/30 w-fit hover:opacity-70 transition-opacity"
             >
               edwinforwork14@gmail.com
             </a>

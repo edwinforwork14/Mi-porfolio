@@ -4,6 +4,8 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
+import LoadingScreen from "@/components/LoadingScreen";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,9 +50,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-black text-white">
-        <TooltipProvider>
-          <SmoothScroll>{children}</SmoothScroll>
-        </TooltipProvider>
+        <LoadingScreen />
+        <LanguageProvider>
+          <TooltipProvider>
+            <SmoothScroll>{children}</SmoothScroll>
+          </TooltipProvider>
+        </LanguageProvider>
         <Toaster position="bottom-right" />
       </body>
     </html>

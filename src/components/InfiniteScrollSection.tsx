@@ -56,8 +56,11 @@ const webImages = [
   "/images/webs/WhatsApp Image 2026-07-22 at 9.14.34 PM (13).jpeg",
 ];
 
-// Barajear las imágenes una sola vez para que el orden sea fijo
-const shuffledWebImages = [...webImages].sort(() => Math.random() - 0.5);
+// Shuffle determinista (misma semilla siempre = mismo orden en server y cliente)
+const shuffledWebImages = webImages
+  .map((img, i) => ({ img, key: (i * 7 + 13) % webImages.length }))
+  .sort((a, b) => a.key - b.key)
+  .map(({ img }) => img);
 
 export default function InfiniteScrollSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -103,6 +106,7 @@ export default function InfiniteScrollSection() {
 
   return (
     <section
+      id="customers"
       ref={containerRef}
       className="relative w-full bg-black py-32 overflow-hidden"
     >

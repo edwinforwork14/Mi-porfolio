@@ -66,6 +66,7 @@ export default function AboutMe() {
 
   return (
     <section
+      id="about"
       ref={containerRef}
       className="relative min-h-screen w-full bg-black overflow-hidden flex flex-col items-center justify-center font-sans py-24"
     >
